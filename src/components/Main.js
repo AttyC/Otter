@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+
+const MainSection = styled.section`
+  border: 1px solid grey;
+  height: calc(100vh - 10%);
+`;
 
 const Main = () => (
-<section className="main-section">
+  <MainSection>
   <div>
   <p>render form modal here</p>
   </div>
-</section>
+</MainSection>
 )
 
 export default Main;
