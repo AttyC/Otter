@@ -15,10 +15,7 @@ We are using [React](https://reactjs.org/) JavaScript library for the front end.
 
 - Packages installed using [npm](https://www.npmjs.com/)
   
-- Testing: [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/)
-
-
-![image](http://localhost:3000/img/otter_screenshot.png)    
+- Testing: [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/)  
 
 #### How to use this code and view the app:
 
