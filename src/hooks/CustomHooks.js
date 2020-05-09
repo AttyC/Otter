@@ -14,12 +14,10 @@ const useSignUpForm = (callback) => {
         })
 
       .then(response => {
-          console.log(response, 'Subscriber added');
-          console.log(response.status, 'Subscriber request status');
+          console.log(response.status, 'Subscriber added: request status');
         })
       .catch(err => {
         console.log(err, 'Subscriber not added');
-        console.log(response.status, 'Subscriber request status');
       });
     }
    callback();
