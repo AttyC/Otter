@@ -11,17 +11,14 @@
 */
 export const colours = {
   black: '#000000',
-  paleFont: '#ffffff',
-  darkBlue: '#0069af',
-  darkGrayishBlue: '#677378',
-  lightGrayishBlueA: '#bfd8e8',
-  lightGrayishBlueB: '#e1e3e4',
-  lightGrayishCyan: '#eff1f1',
+  paleFont: '#fffffa',
 };
 
 const theme = {
   headerFontColour: `${colours.paleFont}`,
   headerFontWeight: '300',
+
+  buttonBorderRadius: '10px'
 
 };
 

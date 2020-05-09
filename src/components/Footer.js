@@ -4,9 +4,9 @@ import styled from 'styled-components';
 
 
 const FooterTag = styled.footer`
-  height: 10%;
   display: flex;
   justify-content: center;
+  height: 100px;
   background: darkslategrey;
   div {
     text-align: center;
