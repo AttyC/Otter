@@ -47,7 +47,7 @@ Button.propTypes = {
     'primary',
     'secondary'
   ]),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   text: PropTypes.string.isRequired,
 };
 
