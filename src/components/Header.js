@@ -7,6 +7,7 @@ const HeaderTag = styled.header`
   display: flex;
   align-content: center;
   justify-content: center;
+  position: fixed;  // for IE
   position: sticky;
   top: 0;
 
