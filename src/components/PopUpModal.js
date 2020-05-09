@@ -1,19 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 import Signup from './Signup';
+import Button from './Button'
  
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+import styled from 'styled-components';
+import { media } from '../style/media';
+
+
+const ModalWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledModal = styled(Modal)`
+  margin: auto;
+  padding: 1em;
+  ${media.large`
+    width: 60%;
+    margin: auto;
+  `};
+`;
  
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root')
@@ -35,21 +42,30 @@ function PopUpModal(){
   }
  
     return (
-      <div>
-        <button onClick={openModal}>Open Modal</button>
-        <Modal
+      <ModalWrapper className="signup-modal">
+        
+        <Button
+          buttonType="primary"
+          className="modal-form"
+          onClick={openModal}
+          text="I'm on board!"
+        /> 
+        <StyledModal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
         >
- 
-          <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-          <button onClick={closeModal}>close</button>          
-          <Signup />
-        </Modal>
-      </div>
-    );
+          
+        <Button
+          buttonType="secondary"
+          onClick={closeModal}
+          text="X"
+        />   
+        <h2 ref={_subtitle => (subtitle = _subtitle)}>Request an invite</h2>  
+
+        <Signup />
+      </StyledModal>
+    </ModalWrapper>
+  );
 }
 export default PopUpModal;
