@@ -1,3 +1,5 @@
+import React from 'react';
+import { mount } from 'enzyme';
 import validate from '../components/LoginFormValidationRules';
 
 describe('Validate Signup form', () => {
@@ -44,6 +46,15 @@ describe('Validate Signup form', () => {
       const testValue = validate(mockValues)
       expect(testValue).toEqual({confirmEmail: "Email addresses must match"})
 
+    });
+
+
+    it('calls onSubmit prop function when form is submitted', () => {
+      const onSubmitFn = jest.fn();
+      const wrapper = mount(<form onSubmit={onSubmitFn}/>);
+      const form = wrapper.find('form');
+      form.simulate('submit');
+      expect(onSubmitFn).toHaveBeenCalledTimes(1);
     });
   });
 });
