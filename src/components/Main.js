@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './Button';
+
+import PopUpModal from './PopUpModal';
 
 const MainSection = styled.section`
   border: 1px solid grey;
@@ -13,10 +14,9 @@ const MainSection = styled.section`
 
 const Main = () => (
   <MainSection>
-    <div>
-      <p>render form modal here</p>
-      <Button />
-    </div>
+  <div id="main-section">
+    <PopUpModal/>
+  </div>
 </MainSection>
 )
 
