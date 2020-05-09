@@ -11,12 +11,14 @@ We are using [React](https://reactjs.org/) JavaScript library for the front end.
   
 - Created with [Create React App](https://github.com/facebook/create-react-app).
 
+- CSS styles with [Styled Components](https://styled-components.com/)
+
 - Packages installed using [npm](https://www.npmjs.com/)
   
 - Testing: [Jest](https://jestjs.io/) and [Enzyme](https://enzymejs.github.io/enzyme/)
 
 
-![image](http://localhost:3000/img/dinder-screenshot.png)    
+![image](http://localhost:3000/img/otter_screenshot.png)    
 
 #### How to use this code and view the app:
 
