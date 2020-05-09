@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 
-
-import styled, { ThemeProvider } from 'styled-components';
 import theme from './style/theme';
+import styled, { ThemeProvider } from 'styled-components';
+import { media } from './style/media';
 
 import Header from './components/Header'
 import Main from './components/Main'
@@ -11,7 +11,10 @@ import Footer from './components/Footer'
 
 const Wrapper = styled.div`
   height: calc(100vh);
-  margin: auto 15%;
+
+  ${media.large`
+    margin: auto 15%;
+  `};
 `
 
 const App = () => (

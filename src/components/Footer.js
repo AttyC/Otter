@@ -1,9 +1,8 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
-
 const FooterTag = styled.footer`
+  color: ${props => props.theme.footerFontColour};
   display: flex;
   justify-content: center;
   height: 100px;

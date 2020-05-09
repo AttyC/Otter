@@ -9,16 +9,26 @@
 /*
   Colour names in shared/haven/opusColours come from 'color description' section of www.colorhexa.com
 */
+
 export const colours = {
-  black: '#000000',
-  paleFont: '#fffffa',
+  darkFont: '#303036',
+  paleFont: '#fffbfa',
+  brandLightBlue: '#5cd9d5ff',
+  brandDarkBlueGreen: '#0d5c63ff',
+  brandOrange: '#FC5130'
 };
 
 const theme = {
-  headerFontColour: `${colours.paleFont}`,
+  brightBackground: colours.brandLightBlue,
+  darkBackground: colours.brandDarkBlueGreen,
+  headerFontColour: colours.brandOrange,
   headerFontWeight: '300',
-
-  buttonBorderRadius: '10px'
+  bodyFont: colours.darkFont,
+  buttonPrimaryBackground: colours.brandOrange,
+  buttonSecondaryBackground: colours.paleFont,
+  buttonBorderRadius: '25px',
+  buttonFontColour: colours.paleFont,
+  footerFontColour: colours.paleFont
 
 };
 

@@ -1,22 +1,59 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const ButtonTag = styled.button`
-  background: darkslategrey;
-  color: ${props => props.theme.headerFontColour};
-  padding: 2em;
+
+  background: ${props => {
+    if (props.buttonType === 'secondary') {
+      return props.theme.buttonSecondaryBackground;
+    } 
+    return props.theme.buttonPrimaryBackground;
+  }};
+
+  color: ${props => {
+    if (props.buttonType === 'secondary') {
+      return props.theme.bodyFont;
+    } 
+    return props.theme.buttonFontColour;
+  }};
+  
+  font-size: 1.15em;
+  font-weight: bold;
+  padding: 0.7em 1em;
   border-radius: ${props => props.theme.buttonBorderRadius};
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &.modal-form {
+    margin-top: 1em;
+  }
 `;
 
-const onClick = () => {
-  console.log('you clicked!')
-}
-
-const Button = () => (  
-  <ButtonTag onClick={onClick}>
-    <span>Jump in, the water's lovely!</span>
+const Button = ({ buttonType, onClick, text }) => (
+  <ButtonTag
+    buttonType={buttonType}
+    onClick={onClick}
+    text={text}
+  >
+    {text}
   </ButtonTag>
-)
+);
+
+Button.propTypes = {
+  buttonType: PropTypes.oneOf([
+    'primary',
+    'secondary'
+  ]),
+  onClick: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired,
+};
+
+Button.defaultProps = {
+  buttonType: 'primary',
+};
 
 export default Button;
 

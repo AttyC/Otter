@@ -11,7 +11,6 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hook-form": "^5.6.3",
     "react-modal": "^3.11.2",
     "react-scripts": "3.4.1",
     "react-test-renderer": "^16.13.1",

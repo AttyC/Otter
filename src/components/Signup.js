@@ -3,6 +3,21 @@ import axios from 'axios';
 import useForm from "./useForm";
 import validate from './LoginFormValidationRules';
 
+import Button from './Button'
+
+import styled from 'styled-components';
+
+const Form = styled.form`
+  input {
+    height: 2em;
+    border-radius: 25px;
+    width: 80%;
+    font-size: 1.2em;
+    padding: 0 0.5em;
+  }
+
+`
+
 const Signup = () => {
   const {
     values,
@@ -15,7 +30,7 @@ const Signup = () => {
 
   function login() {
      //send data to API
-     axios.post('http://localhost:3000/contacts', {
+     axios.post('http://localhost:3000/users', {
       name: values.name,
       email: values.email
     })
@@ -30,49 +45,46 @@ const Signup = () => {
   }
 
   return (
-    <div className="section is-fullheight">
-      <div className="container">
-        <div className="column is-4 is-offset-4">
-          <div className="box">
-          {!submitted && (
-            <form onSubmit={handleSubmit} noValidate>
-            <div className="field">
-                <label className="label">Name</label>
-                <div className="control">
-                  <input autoComplete="off" className={`input ${errors.name && 'is-danger'}`} type="text" name="name" onChange={handleChange} value={values.name || ''} required />
-                  {errors.name && (
-                    <p className="help is-danger">{errors.name}</p>
-                  )}
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Email Address</label>
-                <div className="control">
-                  <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
-                  {errors.email && (
-                    <p className="help is-danger">{errors.email}</p>
-                  )}
-                </div>
-              </div>
-              <div className="field">
-                <label className="label">Confirm Email Address</label>
-                <div className="control">
-                  <input className={`input ${errors.confirmEmail && 'is-danger'}`} type="email" name="confirmEmail" onChange={handleChange} value={values.confirmEmail || ''} required />
-                </div>
-                {errors.confirmEmail && (
-                  <p className="help is-danger">{errors.confirmEmail}</p>
-                )}
-              </div>
-              <button type="submit" className="button is-block is-info is-fullwidth">Sign me up!</button>
-            </form> 
-             )}
-          { submitted && (
-            <h1>Thanks for joining us! We'll be in touch soon.</h1>
-            )
-           }
+    <div>
+    {!submitted && (
+      <Form onSubmit={handleSubmit} noValidate>
+      <div className="field">
+          <label className="label">Name</label>
+          <div className="control">
+            <input autoComplete="off" className={`input ${errors.name && 'is-danger'}`} type="text" name="name" onChange={handleChange} value={values.name || ''} required />
+            {errors.name && (
+              <p className="help is-danger">{errors.name}</p>
+            )}
           </div>
         </div>
-      </div>
+        <div className="field">
+          <label className="label">Email Address</label>
+          <div className="control">
+            <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
+            {errors.email && (
+              <p className="help is-danger">{errors.email}</p>
+            )}
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">Confirm Email Address</label>
+          <div className="control">
+            <input className={`input ${errors.confirmEmail && 'is-danger'}`} type="email" name="confirmEmail" onChange={handleChange} value={values.confirmEmail || ''} required />
+          </div>
+          {errors.confirmEmail && (
+            <p className="help is-danger">{errors.confirmEmail}</p>
+          )}
+        </div>
+        <Button
+          type="submit" 
+          className="button is-block is-info is-fullwidth"
+          text="Sign me up!"></Button>
+      </Form> 
+        )}
+    { submitted && (
+      <h1>Thanks for joining us! We'll be in touch soon.</h1>
+      )
+      }
     </div>
   )
 };
