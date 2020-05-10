@@ -17,7 +17,7 @@ const ButtonTag = styled.button`
     } 
     return props.theme.buttonFontColour;
   }};
-  
+  font-family: 'Oldenburg', serif;
   font-size: 1.15em;
   font-weight: bold;
   padding: 0.7em 1em;

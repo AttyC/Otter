@@ -28,7 +28,8 @@ const theme = {
   buttonSecondaryBackground: colours.paleFont,
   buttonBorderRadius: '25px',
   buttonFontColour: colours.paleFont,
-  footerFontColour: colours.paleFont
+  footerFontColour: colours.paleFont,
+  formBackgroundColour: colours.paleFont
 
 };
 
