@@ -26,6 +26,31 @@ describe('Validate Signup form', () => {
       expect(testValue).toEqual({name: "Name must be 3 or more characters"})
 
     });
+
+
+    it('should return errors.name if name field is empty', () => {
+      const mockValues = {
+        name: '',
+        email: 'wile.coyote@monumentvalley.com',
+        confirmEmail: 'wile.coyote@monumentvalley.com',
+      }
+      const testValue = validate(mockValues)
+      expect(testValue).toEqual({name: "Please enter your name"})
+
+    });
+
+
+    it('should return errors.email if email field is empty', () => {
+      const mockValues = {
+        name: 'AcmeAnvils',
+        email: '',
+        confirmEmail: 'wile.coyote@monumentvalley.com',
+      }
+      const testValue = validate(mockValues)
+      expect(testValue).toEqual({email: "Please enter your email address"})
+
+    });
+
     it('should return errors.email if the email is not formatted correctly', () => {
       const mockValues = {
         name: 'AcmeAnvils',
@@ -34,6 +59,17 @@ describe('Validate Signup form', () => {
       }
       const testValue = validate(mockValues)
       expect(testValue).toEqual({email: "Email address is invalid", confirmEmail: "Email address is invalid" })
+
+    });
+
+    it('should return errors.confirmEmail if confirmEmail field is empty', () => {
+      const mockValues = {
+        name: 'AcmeAnvils',
+        email: 'wile.coyote@monumentvalley.com',
+        confirmEmail: '',
+      }
+      const testValue = validate(mockValues)
+      expect(testValue).toEqual({confirmEmail: "Please enter your email address"})
 
     });
 
