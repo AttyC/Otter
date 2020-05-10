@@ -21,9 +21,10 @@ We are using [React](https://reactjs.org/) JavaScript library for the front end.
 
 __To download and install the app:__
   
-Open Terminal and clone the repository:
+Open Terminal (or PC command line equivalent). Clone the repository and change into the Otter directory.
 ```
 git clone https://github.com/AttyC/Otter
+cd Otter
 ```
   
 Run the following command to install dependencies:  
