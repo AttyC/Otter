@@ -11,15 +11,27 @@ import { media } from '../style/media';
 const ModalWrapper = styled.div`
   display: flex;
   justify-content: center;
+
 `;
 
 const StyledModal = styled(Modal)`
-  margin: auto;
+  background: ${props => props.theme.formBackgroundColour};
+  margin: 5em auto;
   padding: 1em;
-  ${media.large`
+  ${media.medium`
     width: 60%;
-    margin: auto;
   `};
+
+  div.field {
+    margin 1em 0;
+  }
+
+  p.help.is-danger {
+    color: ${props => props.theme.headerFontColour}; 
+    margin-top: 0.3em;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
 `;
  
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)

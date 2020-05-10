@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import useForm from "./useForm";
 import validate from './LoginFormValidationRules';
+import styled from 'styled-components'
+import { media } from '../style/media';
 
 import Button from './Button'
-
-import styled from 'styled-components';
+import otter from '../img/happy_otter_transparent.png'
+;
 
 const Form = styled.form`
   input {
@@ -15,7 +17,14 @@ const Form = styled.form`
     font-size: 1.2em;
     padding: 0 0.5em;
   }
+`
 
+const ThankYouMessage = styled.h1`
+  display: flex;
+  flex-direction: column;
+  ${media.medium`
+    flex-direction: row;
+  `};
 `
 
 const Signup = () => {
@@ -82,9 +91,10 @@ const Signup = () => {
       </Form> 
         )}
     { submitted && (
-      <h1>Thanks for joining us! We'll be in touch soon.</h1>
+      <ThankYouMessage>Thanks for joining us! We'll be in touch soon.
+      <img src={otter} alt="printed otter in sea" width="200"/></ThankYouMessage>
       )
-      }
+    }
     </div>
   )
 };
