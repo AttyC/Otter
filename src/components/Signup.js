@@ -39,7 +39,7 @@ const Signup = () => {
 
   function login() {
      //send data to API
-     axios.post('https://yo7dm2sa2i.execute-api.eu-west-2.amazonaws.com/prod/signup', {
+     axios.post('http://localhost:3000/contacts', {
       name: values.name,
       email: values.email
     })
