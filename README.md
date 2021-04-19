@@ -29,13 +29,13 @@ cd Otter
   
 Run the following command to install dependencies:  
 ```
-npm install
+yarn install
 ```  
 
 __To run and view the app in your browser__
 
 ```
-npm start
+yarn start
 ```
 Now go to [http://localhost:3000/](http://localhost:3000/) and see the app running.
 
@@ -44,13 +44,13 @@ Now go to [http://localhost:3000/](http://localhost:3000/) and see the app runni
 __Tests cover validation of form fields and submission__
   
 ```
-npm test
+yarn test
 ```
 #### Building the app for production
 
 __To build the app for production__
 ```
-npm run build
+yarn run build
 ```
 
 Builds the app for production to the `build` folder.<br />
