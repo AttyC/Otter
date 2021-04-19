@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oldenburg&display=swap');
 body {
+  background-color: #5cd9d5ff;
   margin: 0;
   font-family: 'Oldenburg', serif;
   -webkit-font-smoothing: antialiased;

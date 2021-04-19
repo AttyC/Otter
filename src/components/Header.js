@@ -17,14 +17,15 @@ const HeaderTag = styled.header`
   }
 `;
 
-const Header = ({props}) => {
+const Header = ({ props }) => {
 
   console.log(props);
-  return  (  
-  <HeaderTag>
-    <h1>Otter</h1>
-  </HeaderTag>
-)}
+  return (
+    <HeaderTag>
+      <h1>Otter</h1>
+    </HeaderTag>
+  )
+}
 
 export default Header;
 

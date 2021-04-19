@@ -38,23 +38,23 @@ const Content = styled.div`
   }
   img {
     border-radius: 5%;
-    width: 200px;
+    width: 50%;
+    max-width: 200px;
   }
 
 `;
 
 const Main = () => (
   <MainSection>
-
     <Content>
       <img src={otter} alt="printed otter in sea" />
       <h2>The new way to Happiness? </h2>
-        <h3>Be more... <span>Otter</span></h3>
+      <h3>Be more... <span>Otter</span></h3>
       <p>Be the first to know when we launch</p>
     </Content>
-    <PopUpModal/>
+    <PopUpModal />
 
-</MainSection>
+  </MainSection>
 )
 
 export default Main;

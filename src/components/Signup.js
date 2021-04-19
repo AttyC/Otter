@@ -7,7 +7,7 @@ import { media } from '../style/media';
 
 import Button from './Button'
 import otter from '../img/happy_otter_transparent.png'
-;
+  ;
 
 const Form = styled.form`
   input {
@@ -36,65 +36,69 @@ const Signup = () => {
   } = useForm(login, validate);
 
   const [submitted, setSubmitted] = useState(false);
+  const [dummmySubmit, setDummySubmit] = useState(true) // this is for when the API is not available
 
   function login() {
-     //send data to API
-     axios.post('http://localhost:3000/contacts', {
-      name: values.name,
-      email: values.email
-    })
-
-    .then(response => {
-      setSubmitted(true);
-      console.log(response.status, 'Subscriber added: request status');
+    !dummmySubmit ?
+      //send data to API
+      axios.post('http://localhost:3000/contacts', {
+        name: values.name,
+        email: values.email
       })
-    .catch(err => {
-      console.log(err, 'Subscriber not added');
-    });
+
+        .then(response => {
+          setSubmitted(true);
+          console.log(response.status, 'Subscriber added: request status');
+        })
+        .catch(err => {
+          console.log(err, 'Subscriber not added');
+        })
+
+      : setSubmitted(true)
   }
 
   return (
     <div>
-    {!submitted && (
-      <Form onSubmit={handleSubmit} noValidate>
-      <div className="field">
-          <label className="label">Name</label>
-          <div className="control">
-            <input autoComplete="off" className={`input ${errors.name && 'is-danger'}`} type="text" name="name" onChange={handleChange} value={values.name || ''} required />
-            {errors.name && (
-              <p className="help is-danger">{errors.name}</p>
+      {!submitted && (
+        <Form onSubmit={handleSubmit} noValidate>
+          <div className="field">
+            <label className="label">Name</label>
+            <div className="control">
+              <input autoComplete="off" className={`input ${errors.name && 'is-danger'}`} type="text" name="name" onChange={handleChange} value={values.name || ''} required />
+              {errors.name && (
+                <p className="help is-danger">{errors.name}</p>
+              )}
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Email Address</label>
+            <div className="control">
+              <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
+              {errors.email && (
+                <p className="help is-danger">{errors.email}</p>
+              )}
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Confirm Email Address</label>
+            <div className="control">
+              <input className={`input ${errors.confirmEmail && 'is-danger'}`} type="email" name="confirmEmail" onChange={handleChange} value={values.confirmEmail || ''} required />
+            </div>
+            {errors.confirmEmail && (
+              <p className="help is-danger">{errors.confirmEmail}</p>
             )}
           </div>
-        </div>
-        <div className="field">
-          <label className="label">Email Address</label>
-          <div className="control">
-            <input autoComplete="off" className={`input ${errors.email && 'is-danger'}`} type="email" name="email" onChange={handleChange} value={values.email || ''} required />
-            {errors.email && (
-              <p className="help is-danger">{errors.email}</p>
-            )}
-          </div>
-        </div>
-        <div className="field">
-          <label className="label">Confirm Email Address</label>
-          <div className="control">
-            <input className={`input ${errors.confirmEmail && 'is-danger'}`} type="email" name="confirmEmail" onChange={handleChange} value={values.confirmEmail || ''} required />
-          </div>
-          {errors.confirmEmail && (
-            <p className="help is-danger">{errors.confirmEmail}</p>
-          )}
-        </div>
-        <Button
-          type="submit" 
-          className="button is-block is-info is-fullwidth"
-          text="Sign me up!"></Button>
-      </Form> 
-        )}
-    { submitted && (
-      <ThankYouMessage>Thanks for joining us! We'll be in touch soon.
-      <img src={otter} alt="printed otter in sea" width="200"/></ThankYouMessage>
+          <Button
+            type="submit"
+            className="button is-block is-info is-fullwidth"
+            text="Sign me up!"></Button>
+        </Form>
+      )}
+      { submitted && (
+        <ThankYouMessage>Thanks for joining us! We'll be in touch soon.
+          <img src={otter} alt="printed otter in sea" width="200" /></ThankYouMessage>
       )
-    }
+      }
     </div>
   )
 };

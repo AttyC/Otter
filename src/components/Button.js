@@ -7,14 +7,14 @@ const ButtonTag = styled.button`
   background: ${props => {
     if (props.buttonType === 'secondary') {
       return props.theme.buttonSecondaryBackground;
-    } 
+    }
     return props.theme.buttonPrimaryBackground;
   }};
 
   color: ${props => {
     if (props.buttonType === 'secondary') {
       return props.theme.bodyFont;
-    } 
+    }
     return props.theme.buttonFontColour;
   }};
   font-family: 'Oldenburg', serif;
@@ -25,6 +25,7 @@ const ButtonTag = styled.button`
 
   &:hover {
     transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
   }
 
   &.modal-form {
